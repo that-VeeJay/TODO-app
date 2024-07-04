@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-color: #030637;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+}
+
+body {
+    background-color: #F0F8FF;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bg-card {
+    position: absolute;
+    width: 320px;
+    height: 435px;
+    padding: 1.8rem;
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transform: rotateZ(15deg);
+}
+
+.card {
+    width: 320px;
+    height: 440px;
+    padding: 1.8rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 1s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.login-card {
+    width: 320px;
+    height: 370px;
+    padding: 1.8rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 1s ease;
+}
+
+.login-card:hover {
+    transform: scale(1.03);
+}
+
+
+.clip {
+    position: absolute;
+    top: -35px;
+    left: 130px;
+    width: 4rem;
+    filter: opacity(100%);
+}
+
+.card-title {
+    font-weight: 500;
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+form {
+    margin-top: .8rem;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease; 
+}
+
+.input-field:focus {
+    outline: none;
+    border-bottom: 1.2px solid var(--primary-color);
+}
+
+img {
+    width: 1.1rem;
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    float: right;
+    filter: invert(30%) opacity(75%);
+}
+
+.forgot-password {
+    margin-top: 1rem;
+    margin-bottom: .8rem;
+    display: flex;
+    justify-content: end;
+    font-weight: 600;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.register-btn {
+    width: 100%;
+    border-radius: 5rem;
+    padding: .5rem;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 500;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: .2rem;
+    background-color: var(--primary-color);
+    transition: all 1s ease;
+}
+
+.register-btn:hover {
+    background-color: #0306378a;
+    color: white;
+}
+
+.login-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    transform: all 1s ease;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+.bottom-link {
+    text-align: center;
+}
