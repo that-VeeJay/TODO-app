@@ -8,7 +8,8 @@
             <img class="clip" src="assets/clip.png" alt="clip image" draggable="false">
             <h3 class="card-title">REGISTER</h3>
             <hr>
-            <form action="#" method="post">
+            <form action="./controllers/Users.php" method="post">
+                <input type="hidden" name="type" value="register">
                 <!-- Username -->
                 <div class="input-container">
                     <i class="fa-solid fa-user"></i>
