@@ -1,4 +1,7 @@
-<?php include(__DIR__ . "/templates/head.php"); ?>
+<?php
+include(__DIR__ . "/templates/head.php");
+include(__DIR__ . "/helpers/notification.helper.php")
+?>
 
 <body>
     <div id="main">
@@ -8,28 +11,34 @@
             <img class="clip" src="assets/clip.png" alt="clip image" draggable="false">
             <h3 class="card-title">REGISTER</h3>
             <hr>
+
+            <?php
+            flashMessage('errors');
+            flashMessage('success');
+            ?>
+
             <form action="./controllers/Users.php" method="post">
                 <input type="hidden" name="type" value="register">
                 <!-- Username -->
                 <div class="input-container">
                     <i class="fa-solid fa-user"></i>
-                    <input class="input-field" type="text" placeholder="Username">
+                    <input class="input-field" type="text" placeholder="Username" name="username">
                 </div>
                 <!-- Email -->
                 <div class="input-container">
                     <i class="fa-solid fa-envelope"></i>
-                    <input class="input-field" type="email" placeholder="Email">
+                    <input class="input-field" type="email" placeholder="Email" name="email">
                 </div>
                 <!-- Password -->
                 <div class="input-container">
                     <i class="fa-solid fa-key"></i>
-                    <input class="input-field" type="password" placeholder="Password">
+                    <input class="input-field" type="password" placeholder="Password" name="password">
                     <img class="toggle-icon" src="assets/eye-regular.svg" alt="Password Toggle Icon" draggable="false">
                 </div>
                 <!-- Confirm Password -->
                 <div class="input-container">
                     <i class="fa-solid fa-key"></i>
-                    <input class="input-field confirm-password" type="password" placeholder="Confirm Password">
+                    <input class="input-field confirm-password" type="password" placeholder="Confirm Password" name="confirm_password">
                     <img class="toggle-icon-confirm" src="assets/eye-regular.svg" alt="Password Toggle Icon" draggable="false">
                 </div>
                 <!-- Button -->
