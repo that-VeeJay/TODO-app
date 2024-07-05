@@ -15,3 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });  
+
+// Remove notification after 6 seconds delay
+setTimeout(() => {
+    const alerts = document.querySelectorAll('.error-container, .success-message');
+    alerts.forEach((alert) => {
+        alert.remove();
+    });
+}, 6000);
