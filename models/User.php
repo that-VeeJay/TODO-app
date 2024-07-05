@@ -19,7 +19,7 @@ class User
             $params = [
                 ':username' => $data['username'],
                 ':email' => $data['email'],
-                ':password' => $data['password'],
+                ':password' => password_hash($data['password'], PASSWORD_BCRYPT),
             ];
             return $stmt->execute($params);
         } catch (PDOException $e) {
@@ -29,12 +29,31 @@ class User
 
     public function findEmail($email): bool
     {
-        $query = "SELECT email FROM users WHERE email = :email;";
-        $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':email', $email);
-        $stmt->execute();
-        $result = $stmt->rowCount();
+        try {
+            $query = "SELECT email FROM users WHERE email = :email;";
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            $result = $stmt->rowCount();
 
-        return ($result > 0) ? true : false;
+            return ($result > 0) ? true : false;
+        } catch (PDOException $e) {
+            exit('Finding Email failed: ' . $e->getMessage());
+        }
+    }
+
+    public function verifyPassword($data): bool
+    {
+        try {
+            $query = "SELECT password FROM users WHERE email = :email;";
+            $stmt = $this->db->prepare($query);
+            $stmt->bindParam(':email', $data['email']);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return (password_verify($data['password'], $result['password'])) ? true : false;
+        } catch (PDOException $e) {
+            exit('Finding Email failed: ' . $e->getMessage());
+        }
     }
 }
