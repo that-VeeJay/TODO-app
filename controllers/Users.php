@@ -67,7 +67,7 @@ class Users
         ];
 
         if ($this->userModel->verifyPassword($data) == true) {
-            header("Location: ../homepage.php");
+            header("Location: ../users/homepage.php");
             exit;
         } else {
             flashMessage('errors', 'Invalid Credentials.');
